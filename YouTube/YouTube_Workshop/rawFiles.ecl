@@ -15,13 +15,12 @@ EXPORT rawFiles := MODULE
         STRING   Thumbnail_Link;                 // Quick snapshot of your video while browsing YouTube.
         BOOLEAN  Comments_Disabled;              // Can it have comments?
         BOOLEAN  Ratings_Disabled;               // Can it have ratings? 
-        BOOLEAN  Video_Error_or_Removed;         // Are the errors removed?
+        BOOLEAN  Video_Error_or_Removed;         // Are the erros removed?
     END;
     
+    // US YouTube Dataset
     US_DS_Raw := DATASET('~youtub::raw::us::csv', YouTube_Rec, 
                               CSV(HEADING(1)));
-
-    // US YouTube Dataset
     EXPORT US_DS := DEDUP(SORT(US_DS_Raw, record), record);
 
     // Canada YouTube Dataset
