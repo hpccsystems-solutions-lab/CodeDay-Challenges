@@ -7,7 +7,7 @@ EXPORT rawFiles := MODULE
         STRING   Channel_Title;                  // Channel that published the video
         INTEGER  Category_ID;                    // ID of the category the video belongs to
         STRING   Publish_Time;                   // When vide was uploaded. Format: 2017-11-15T02:17:29.000Z
-        STRING   Tags;                           // Separated by | character, [none] is displayed if there are no tags
+        STRING   Tags;                           // Video's tags. Each tag is separated by | character
         INTEGER  Views;                          // Total number of times that video was viewed
         INTEGER  Likes;                          // Total likes
         INTEGER  Dislikes;                       // Total dislikes
