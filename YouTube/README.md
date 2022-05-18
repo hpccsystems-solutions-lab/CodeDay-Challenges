@@ -3,6 +3,7 @@
 For this challenge students will work with two YouTube Datasets.
 
 Data and initial code for the challenge can be found at [CodeDay Workshop](https://ide.hpccsystems.com/workspaces/share/52e24f44-070c-47e8-a2f7-1748307444f1)
+
 - rawFiles: Gives access to dataset, it's record layout, and fields name
 - viewVideos: Code sample to output CA dataset 
 - When creating a new .ecl for this challenge, make sure to IMPORT rawFiles module and STD library 

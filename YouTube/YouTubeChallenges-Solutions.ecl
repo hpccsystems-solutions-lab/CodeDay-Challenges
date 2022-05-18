@@ -1,7 +1,7 @@
 IMPORT YouTube.rawFiles;
 IMPORT STD;
 
-// Display the first 10 records in the US dataset?
+//* Display the first 10 records in the US dataset?
 
 // Answer: Contains 10 records of US dataset
 
@@ -10,7 +10,7 @@ OUTPUT(CHOOSEN(rawFiles.US_DS, 10), NAMED('US_10Rows'));
 //*********************************************************************************
 //*********************************************************************************
 
-// How many records are in the CA dataset?
+// How many records are in CA dataset?
 
 // Answer: 40881
 
@@ -52,8 +52,10 @@ OUTPUT(IF(US2018 >= CA2018, 'US', 'CA'), NAMED('Most_Release2018'));
 //*********************************************************************************
 //*********************************************************************************
 
-// Number of total records in both US and CA datasets that have 
-// the title "A Very Cool Christmas - Movie Review - brutalmoose"
+/*
+ Number of total records in both US and CA datasets that have the title 
+        A Very Cool Christmas - Movie Review - brutalmoose
+*/
 
 // Answer is: 1
 
@@ -88,8 +90,10 @@ OUTPUT(COUNT(Dislike), NAMED('More_Dislikes'));
 //*********************************************************************************
 //*********************************************************************************
 
-// In CA dataset are there any videos that have Comments_Disabled set to true, 
-// but have Comments?
+/*
+In CA dataset are there any records that have Comments_Disabled set to true, 
+but have Comments?
+*/
 
 // Answer: No
 
@@ -101,7 +105,7 @@ OUTPUT(IF(EXISTS(isWrongEntry), 'Yes', 'No'), NAMED('isWrongEntry'));
 //*********************************************************************************
 //*********************************************************************************
 
-// In US dataset are there any videos that the total of Dislikes and Likes are equal to Views count?
+// In US dataset are there any records that the total of Dislikes and Likes are equal to Views count?
 
 // Answer: No
 
@@ -112,9 +116,11 @@ OUTPUT(EXISTS(isEqual), NAMED('isEqual'));
 //*********************************************************************************
 //*********************************************************************************
 
+/*
+In CA dataset, How many records have minimum number of Likes?
 
-// In CA dataset, How many records have minimum number of Likes?
-// Note: we are not interested in equal ones.
+Note: we are not interested in equal ones.
+*/
 
 
 // Answer: 284
@@ -130,20 +136,18 @@ OUTPUT(COUNT(LittleLikes), NAMED('LittleLikes'));
 //*********************************************************************************
 
 /* 
-// In CA dataset, Publish_Time includes date and time (2017-11-13T17:13:01.000Z).
-// We want to separate date and time for better readability and future processing,
-// date format to mm/dd/yyyy. Please see the example.
+In CA dataset, Publish_Time includes date and time (2017-11-13T17:13:01.000Z). 
+We want to separate date and time for better readability and future processing, 
+and we want to convert the  date format to mm/dd/yyyy. 
+Create a new dataset that includes 4 fields: 
 
-// Create a new dataset that includes 4 fields: Video_ID, Title, PublishedDate and PublishedTime.
-// ECL standard library has a ConvertDateFormat() function that can be used to reformat date. 
+  Video_ID, Title, PublishedDate and PublishedTime
+       •   ECL standard library has a ConvertDateFormat() function that can be used to reformat date:   
+       •   STRING ConvertDateFormat(STRING date_text, VARSTRING from_format='%m/%d/%Y', VARSTRING to_format='%Y%m%d') 
+       •   https://github.com/hpcc-systems/HPCC-Platform/blob/master/ecllibrary/std/Date.ecl
+       •   Name your new dataset NewDS and output the first 25 records. 
+       •   The result dataset should look like following:
 
-    STRING ConvertDateFormat(STRING date_text, VARSTRING from_format='%m/%d/%Y', VARSTRING to_format='%Y%m%d') 
-    https://github.com/hpcc-systems/HPCC-Platform/blob/master/ecllibrary/std/Date.ecl
- 
-// Name your new dataset NewDS and output the first 25 records. 
-
-
-//The result dataset should look like following:
 
 
 Video_ID     | Title                | PublishedDate | PublishedTime
@@ -171,13 +175,14 @@ OUTPUT(CHOOSEN(NewDS, 25), NAMED('FormattingDate_Time'));
 //*********************************************************************************
 //*********************************************************************************
 
-// In ECL CountWords function is used to count the number of words using a separator
-// STD.Str.CountWords(source, separator)
-// https://hpccsystems.com/training/documentation/standard-library-reference/html/CountWords.html
-// Can you find out how videos has the  most tags in US? 
+/*
+How many videos have the most tags in US?
 
-// Note: Keep in mind, that a video can be trended in more than one day,
-// which will result in duplicated Video_ID and Title.
+   •  In ECL CountWords function is used to count the number of words using a separator
+   •  STD.Str.CountWords(source, separator)
+   •  https://hpccsystems.com/training/documentation/standard-libraryreference/html/CountWords.html
+   •  Note: Keep in mind, that a video can be trended in more than one day, which will result in duplicated Video_ID and Title.
+*/
 
 // Answer:  2
 
@@ -202,10 +207,12 @@ OUTPUT(MaxTag, nAMED('MaxTag'));
 //*********************************************************************************
 
 
-// In CA dataset how many records have the same dates (day, month, year) for Publish_Time and Trending_Date?
+/*
+In CA dataset how many records have the same dates (day, month, year) for Publish_Time and Trending_Date?
 
-// Hint: Keep in mind that Publish_Time and Trending_Date don't have the same format. 
-// For comparison you need the exact same format on both fields. 
+Note: Keep in mind that Publish_Time and Trending_Date do not have the same format. 
+For comparison you need the exact same format on both fields. 
+*/
 
 // Answer is: 	2042
 
@@ -221,9 +228,12 @@ OUTPUT(SameDates, NAMED('Have_Same_Dates'));
 //*********************************************************************************
 
 
-// Now we want to know "total releases per year" in US. Using the NewDS dataset you just created, 
-// or finding another solution, show number of releases per year.  
-// Looking at the result, how many years is included in this dataset?
+/*
+Now we want to know "total releases per year" in US. 
+Using the NewDS dataset you just created, or finding another solution, 
+show number of releases per year.  Looking at the result, 
+how many years is included in this dataset?
+*/
 
 // Answer: 12 
 
@@ -299,11 +309,14 @@ OUTPUT(TitleCount(MaxCount = Total), NAMED('TitleCount'));
 
 //*********************************************************************************
 //*********************************************************************************
+/*
+How many videos have different Channel_Title between US and CA. 
 
-// How many videos have different Channel_Title between US and CA. 
-// Hint: Since we are looking at videos, remember to eliminate duplicates. 
+Note: Since we are looking at videos, remember to eliminate duplicates. 
+*/
 
 // Answer: 8
+
 DiffChannel := DEDUP(
                     JOIN(
                         rawFiles.US_DS, rawFiles.CA_DS,
