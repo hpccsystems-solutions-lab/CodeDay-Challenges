@@ -2,16 +2,25 @@
 
 HPCC Systems Solutions Lab is proud to collaborate with [CodeDay Org](https://www.codeday.org/) on Big Data Challenge.
 
-Through the Big Data Challenge students are introduced to big data concepts, they become familiar with ECL (Enterprise Control Language) our big data programming language)=, and they get hands-on practice. During the challenge, students are given sample ECL code and an opportunity to solve challenge questions ranging from easy to mid-level difficulty.
+Through the Big Data Challenge students are introduced to big data concepts, how to process and analyze data using ECL (Enterprise Control Language). This challenge starts with an overview of ECL language and its syntax. Then  students are given a series of problems ranging  from easy to mid-level difficulty to solve. 
+
+## Challenges 
+Currently this repository contains three different challenges.
+
+- Spotify: Containing top played Spotify music 
+- YouTube: Containing trending videos and their statistic
+- Movies:  Containing movies information 
 
 ## Resources
 
-- [LearnECL](https://hpccsystems-solutions-lab.github.io/) training and related hands on practices on [CloudIDE](https://ide.hpccsystems.com/workspaces/share/291d17d9-e5cb-4fac-83c2-ac5997c28a31)
+- [LearnECL](https://learn.hpccsystems.com/) includes ECL syntax with hands-on practices
 
-- [ECL cheat sheet](https://github.com/hpccsystems-solutions-lab/CodeDay_May2020/blob/master/ECL_Cheat_Sheet.pdf)
+- [ECL cheat sheet](https://github.com/hpccsystems-solutions-lab/CodeDay-Challenges/blob/main/CloudIDE-Setup.pdf) quick view of ECL syntax
 
-- [Cloud IDE Setup](https://github.com/hpccsystems-solutions-lab/CodeDay_May2020/blob/master/CloudIDE-Setup.pdf)
+- [Cloud IDE](https://github.com/hpccsystems-solutions-lab/CodeDay-Challenges/blob/main/CloudIDE-Setup.pdf) user guide
 
-- Additional [ECL](http://cdn.hpccsystems.com/releases/CE-Candidate-7.0.24/docs/EN_US/ECLLanguageReference_EN_US-7.0.24-1.pdf) information
+- All  [HPCC and ECL](https://hpccsystems.com/training/documentation) related information
 
-- ECL [Visualization](https://d2wulyp08c6njk.cloudfront.net/releases/CE-Candidate-7.6.2/docs/EN_US/VisualizingECL_EN_US-7.6.2-1.pdf)
+
+### Contact
+For any questions or suggestions please contact Bahar Fardanian @ Bahareh.Fardanian@lexisnexisrisk.com
