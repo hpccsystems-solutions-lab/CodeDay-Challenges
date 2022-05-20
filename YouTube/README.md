@@ -2,7 +2,7 @@
 
 For this challenge students will work with two YouTube Datasets.
 
-Data and initial code for the challenge can be found at [CodeDay Workshop](https://ide.hpccsystems.com/workspaces/share/52e24f44-070c-47e8-a2f7-1748307444f1)
+Data and initial code for the challenge can be found at [CodeDay Workshop](https://ide.hpccsystems.com/workspaces/share/a0e2a8ce-64fe-4df6-b04c-a3cac8395a9e)
 
 - rawFiles: Gives access to dataset, it's record layout, and fields information
 - viewVideos: Code sample to output Canada dataset 
